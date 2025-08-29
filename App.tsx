@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import { Header } from './components/Header';
 import { ImageUploader } from './components/ImageUploader';
@@ -29,13 +30,54 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const handleImageUpload = (file: File) => {
+    const MAX_WIDTH = 1024;
+    const MAX_HEIGHT = 1024;
+    
     const reader = new FileReader();
-    reader.onloadend = () => {
-      const base64String = (reader.result as string).split(',')[1];
-      setOriginalImage(base64String);
-      setOriginalImageType(file.type);
-      setGeneratedImage(null);
-      setError(null);
+    reader.onload = (event) => {
+      if (!event.target?.result) {
+        setError("Failed to read file.");
+        return;
+      }
+      const img = new Image();
+      img.src = event.target.result as string;
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let { width, height } = img;
+
+        if (width > height) {
+          if (width > MAX_WIDTH) {
+            height = Math.round((height * MAX_WIDTH) / width);
+            width = MAX_WIDTH;
+          }
+        } else {
+          if (height > MAX_HEIGHT) {
+            width = Math.round((width * MAX_HEIGHT) / height);
+            height = MAX_HEIGHT;
+          }
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          setError('Failed to process image: could not get canvas context.');
+          return;
+        }
+        ctx.drawImage(img, 0, 0, width, height);
+
+        const mimeType = 'image/jpeg';
+        const dataUrl = canvas.toDataURL(mimeType, 0.9);
+        const base64String = dataUrl.split(',')[1];
+
+        setOriginalImage(base64String);
+        setOriginalImageType(mimeType);
+        setGeneratedImage(null);
+        setError(null);
+      };
+      img.onerror = () => {
+          setError("Failed to load the image for processing. It might be corrupted or in an unsupported format.");
+      };
     };
     reader.onerror = () => {
       setError("Failed to read the uploaded file.");
@@ -109,9 +151,19 @@ const App: React.FC = () => {
 
   const handleDownloadClick = () => {
     if (!generatedImage) return;
+
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const timestamp = `${year}${month}${day}_${hours}${minutes}${seconds}`;
+
     const link = document.createElement('a');
     link.href = `data:image/png;base64,${generatedImage}`;
-    link.download = 'professional_headshot.png';
+    link.download = `professional_headshot_${timestamp}.png`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
