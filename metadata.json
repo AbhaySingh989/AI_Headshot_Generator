@@ -1,0 +1,5 @@
+{
+  "name": "AI Headshot Generator",
+  "description": "An application that transforms your photos into professional headshots using AI. Choose from over ten background and ambience styles to create the perfect look.",
+  "requestFramePermissions": []
+}
