@@ -36,42 +36,6 @@ This web application leverages the Google Gemini 2.5 Flash API (aka Nano Banana 
 - 💾 **Download Your Headshot**: Save your generated headshot as a high-quality PNG file.
 
 ---
-
-📊 **How It Works**
-
-This diagram illustrates the complete workflow of the AI Headshot Generator, from uploading your photo to downloading the final result.
-
-```mermaid
-graph TD
-    subgraph "1. User Interaction"
-        A[👤 User uploads a photo] --> B{🖼️ Select background style};
-        B --> C{🎨 Apply advanced customizations};
-        C --> D["🚀 Click 'Generate Headshot'"];
-    end
-
-    subgraph "2. AI Processing"
-        D -- Request (Image + Prompt) --> E(🧠 Google Gemini API);
-        E -- Generated Image --> F[🖼️ New headshot is created];
-    end
-
-    subgraph "3. Final Result"
-        F --> G[🖥️ Generated headshot is displayed in the app];
-        G --> H[💾 User downloads the headshot];
-    end
-```
-
----
-
-🛠️ **Technologies Used**
-
-- **[React](https://reactjs.org/)**: ⚛️ A JavaScript library for building user interfaces.
-- **[TypeScript](https://www.typescriptlang.org/)**: 🔷 A typed superset of JavaScript.
-- **[Vite](https://vitejs.dev/)**: ⚡ A fast build tool and development server.
-- **[Tailwind CSS](https://tailwindcss.com/)**: 🎨 A utility-first CSS framework.
-- **[Google Gemini API](https://ai.google.dev/)**: 🧠 The AI model for generating headshots.
-
----
-
 ## Getting Started
 
 This contains everything you need to run your app locally.
@@ -162,6 +126,42 @@ And that'''s it! After making these changes, restart your development server by 
 7.  Once the headshot is generated, you can download it.
 
 ---
+
+📊 **How the App Works**
+
+This diagram illustrates the complete workflow of the AI Headshot Generator, from uploading your photo to downloading the final result.
+
+```mermaid
+graph TD
+    subgraph "1. User Interaction"
+        A[👤 User uploads a photo] --> B{🖼️ Select background style};
+        B --> C{🎨 Apply advanced customizations};
+        C --> D["🚀 Click 'Generate Headshot'"];
+    end
+
+    subgraph "2. AI Processing"
+        D -- Request (Image + Prompt) --> E(🧠 Google Gemini API);
+        E -- Generated Image --> F[🖼️ New headshot is created];
+    end
+
+    subgraph "3. Final Result"
+        F --> G[🖥️ Generated headshot is displayed in the app];
+        G --> H[💾 User downloads the headshot];
+    end
+```
+
+---
+
+🛠️ **Technologies Used**
+
+- **[React](https://reactjs.org/)**: ⚛️ A JavaScript library for building user interfaces.
+- **[TypeScript](https://www.typescriptlang.org/)**: 🔷 A typed superset of JavaScript.
+- **[Vite](https://vitejs.dev/)**: ⚡ A fast build tool and development server.
+- **[Tailwind CSS](https://tailwindcss.com/)**: 🎨 A utility-first CSS framework.
+- **[Google Gemini API](https://ai.google.dev/)**: 🧠 The AI model for generating headshots.
+
+---
+
 
 📁 **Project Structure**
 
