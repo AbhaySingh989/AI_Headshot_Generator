@@ -46,7 +46,7 @@ graph TD
     subgraph "1. User Interaction"
         A[👤 User uploads a photo] --> B{🖼️ Select background style};
         B --> C{🎨 Apply advanced customizations};
-        C --> D[🚀 Click "Generate Headshot"];
+        C --> D["🚀 Click 'Generate Headshot'"];
     end
 
     subgraph "2. AI Processing"
