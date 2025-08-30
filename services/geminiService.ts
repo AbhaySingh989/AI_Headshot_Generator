@@ -2,11 +2,11 @@
 import { GoogleGenAI, Modality } from "@google/genai";
 import type { GenerateContentResponse } from "@google/genai";
 
-if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable not set");
+if (!import.meta.env.VITE_API_KEY) {
+    throw new Error("VITE_API_KEY environment variable not set");
 }
   
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 
 export async function generateHeadshot(base64ImageData: string, mimeType: string, prompt: string): Promise<string> {
     try {
