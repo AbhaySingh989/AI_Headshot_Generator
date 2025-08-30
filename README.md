@@ -1,5 +1,7 @@
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
+---
 
 # 📸 AI Headshot Generator
 
@@ -12,13 +14,11 @@
 - 🐙 GitHub: [AbhaySingh989](https://github.com/AbhaySingh989)
 - 💼 LinkedIn: [Abhay Singh](https://www.linkedin.com/in/abhay-pratap-singh-905510149/)
 
-</div>
-
 ---
 
 📖 **About**
 
-This web application leverages the Google Gemini API to turn your everyday photos into high-quality, professional headshots. Simply upload an image, choose your desired style, customize the details, and let the AI work its magic. It'''s perfect for anyone needing a new profile picture for LinkedIn, a corporate website, or any other professional platform.
+This web application leverages the Google Gemini 2.5 Flash API (aka Nano Banana 🍌🍌) to turn your everyday photos into high-quality, professional headshots. Simply upload an image, choose your desired style, customize the details, and let the AI work its magic. It'''s perfect for anyone needing a new profile picture for LinkedIn, a corporate website, or any other professional platform.
 
 ---
 
@@ -76,7 +76,7 @@ graph TD
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/drive/15J7qQsT9m0bubepaKm7p2a8Wc4fuDkc_
+View the app in AI Studio: https://ai.studio/apps/drive/15J7qQsT9m0bubepaKm7p2a8Wc4fuDkc_
 
 ### Prerequisites
 
