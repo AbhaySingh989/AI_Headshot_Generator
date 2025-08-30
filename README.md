@@ -1,32 +1,76 @@
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 
-# AI Headshot Generator
+# 📸 AI Headshot Generator
 
-This web application leverages the power of the Google Gemini API to transform your ordinary photos into professional-looking headshots. Upload an image, choose from a variety of styles, and let the AI do the rest!
+**Transform your photos into professional headshots with the power of AI.**
+
+👤 **Author**
+
+**Abhay Singh**
+- 📧 Email: [abhay.rkvv@gmail.com](mailto:abhay.rkvv@gmail.com)
+- 🐙 GitHub: [AbhaySingh989](https://github.com/AbhaySingh989)
+- 💼 LinkedIn: [Abhay Singh](https://www.linkedin.com/in/abhay-pratap-singh-905510149/)
 
 </div>
 
-## Features
+---
 
-- **Image Upload:** Easily upload your photo in various formats.
-- **Style Selection:** Choose from a range of predefined background styles.
-- **Custom Backgrounds:** Describe your own custom background scene for a unique look.
-- **Advanced Customization:** Fine-tune your headshot with options for:
-  - Skin Retouching
-  - Hairstyle
-  - Facial Expression
-  - Wardrobe
-- **AI-Powered Generation:** Utilizes the Google Gemini API to generate high-quality headshots.
-- **Download Your Headshot:** Save your generated headshot as a PNG file.
+📖 **About**
 
-## Technologies Used
+This web application leverages the Google Gemini API to turn your everyday photos into high-quality, professional headshots. Simply upload an image, choose your desired style, customize the details, and let the AI work its magic. It'''s perfect for anyone needing a new profile picture for LinkedIn, a corporate website, or any other professional platform.
 
-- **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.
-- **[TypeScript](https://www.typescriptlang.org/)**: A typed superset of JavaScript that compiles to plain JavaScript.
-- **[Vite](https://vitejs.dev/)**: A fast build tool and development server for modern web projects.
-- **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapid UI development.
-- **[Google Gemini API](https://ai.google.dev/):** The AI model used for generating the headshots.
+---
+
+✨ **Features**
+
+- 🖼️ **Image Upload**: Easily upload your photos in various formats.
+- 🎨 **Style Selection**: Choose from a range of predefined background styles.
+- ✍️ **Custom Backgrounds**: Describe your own custom background scene for a unique look.
+- 🛠️ **Advanced Customization**: Fine-tune your headshot with options for:
+  - ✨ Skin Retouching
+  - 💇 Hairstyle
+  - 😊 Facial Expression
+  - 👔 Wardrobe
+- 🤖 **AI-Powered Generation**: Utilizes the Google Gemini API to generate stunning headshots.
+- 💾 **Download Your Headshot**: Save your generated headshot as a high-quality PNG file.
+
+---
+
+📊 **How It Works**
+
+This diagram illustrates the complete workflow of the AI Headshot Generator, from uploading your photo to downloading the final result.
+
+```mermaid
+graph TD
+    subgraph "1. User Interaction"
+        A[👤 User uploads a photo] --> B{🖼️ Select background style};
+        B --> C{🎨 Apply advanced customizations};
+        C --> D[🚀 Click "Generate Headshot"];
+    end
+
+    subgraph "2. AI Processing"
+        D -- Request (Image + Prompt) --> E(🧠 Google Gemini API);
+        E -- Generated Image --> F[🖼️ New headshot is created];
+    end
+
+    subgraph "3. Final Result"
+        F --> G[🖥️ Generated headshot is displayed in the app];
+        G --> H[💾 User downloads the headshot];
+    end
+```
+
+---
+
+🛠️ **Technologies Used**
+
+- **[React](https://reactjs.org/)**: ⚛️ A JavaScript library for building user interfaces.
+- **[TypeScript](https://www.typescriptlang.org/)**: 🔷 A typed superset of JavaScript.
+- **[Vite](https://vitejs.dev/)**: ⚡ A fast build tool and development server.
+- **[Tailwind CSS](https://tailwindcss.com/)**: 🎨 A utility-first CSS framework.
+- **[Google Gemini API](https://ai.google.dev/)**: 🧠 The AI model for generating headshots.
+
+---
 
 ## Getting Started
 
@@ -51,6 +95,8 @@ View your app in AI Studio: https://ai.studio/apps/drive/15J7qQsT9m0bubepaKm7p2a
     ```
 3.  **Set up your environment variables:**
     Follow the guide below to configure your Gemini API key.
+
+---
 
 ## Configuring Your Gemini API Key
 
@@ -100,7 +146,9 @@ const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 
 And that'''s it! After making these changes, restart your development server by running `npm run dev` in your terminal. Your application should now be able to load your Gemini API key correctly.
 
-## Usage
+---
+
+🚀 **Usage**
 
 1.  **Run the application:**
     ```bash
@@ -113,10 +161,47 @@ And that'''s it! After making these changes, restart your development server by 
 6.  Click "Generate Headshot".
 7.  Once the headshot is generated, you can download it.
 
-## Contributing
+---
+
+📁 **Project Structure**
+
+Here is an overview of the key files in the project:
+
+```
+AI_Headshot_Generator/
+├── 📜 App.tsx                # Main application component
+├── 🎨 index.css              # Global styles
+├── 🚀 index.tsx              # Main entry point for the React app
+├── 🔧 vite.config.ts         # Vite configuration
+├── 📦 package.json            # Project dependencies and scripts
+├── 🔑 .env.local             # Environment variables (API key) - not version controlled
+└───📁 components/            # Reusable React components
+│   ├── 🖼️ ImageViewer.tsx
+│   └─── ...
+└───📁 services/              # Services for interacting with APIs
+    └── 🤖 geminiService.ts
+```
+
+---
+
+🐛 **Troubleshooting**
+
+- **Blank screen on startup:**
+  - Ensure you have correctly configured your `VITE_API_KEY` in the `.env.local` file.
+  - Check the browser'''s developer console for any errors.
+- **API Errors (e.g., 429 Quota Exceeded):**
+  - You may have exceeded the free tier limit for the Gemini API. Check your usage in the Google AI Studio and consider upgrading if necessary.
+
+---
+
+🤝 **Contributing**
 
 Contributions are welcome! Please feel free to submit a pull request.
 
-## License
+---
+
+Made with ❤️ by [Abhay Singh](https://github.com/AbhaySingh989)
+
+---
 
 This project is licensed under the MIT License.
